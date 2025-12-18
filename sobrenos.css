@@ -1,20 +1,33 @@
-header {
-    width: 1392px;
-    height: 300px;
-    left: 0px;
-    top: 0px;
-    background: #407E3B;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.logo1{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    top: 21px;
-    left: 22px;
+
+body {
+    font-family: Arial, sans-serif;
 }
-.text{
-    display:flex;
-    position:absolute;
-    bottom:250px;
+
+.header {
+    background-color: #4b7f3b;
+    padding: 30px;
+}
+
+.logo {
+    width: 260px;
+}
+
+.sobre {
+    background-color: #4b7f3b;
+    min-height: 400px;
+    padding: 40px;
+}
+
+.caixa-texto {
+    background-color: #1fb24a;
+    max-width: 900px;
+    padding: 30px;
+    border-radius: 10px;
+    color: #0f2f14;
+    line-height: 1.6;
 }

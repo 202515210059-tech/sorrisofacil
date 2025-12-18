@@ -46,23 +46,16 @@ body {
 }
 
 .header-menu a {
-  font-family: 'Goblin One', cursive;
+  font-family: 'Goblin One';
   font-size: 14px;
   color: #ffffff;
-  text-decoration: none;
 }
 
-.header-menu a:hover {
-  text-decoration: underline;
-}
 
 .banner {
   width: 100%;
   height: 420px;
   background-image: url("imagens/banner.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   padding-left: 60px;
@@ -82,7 +75,6 @@ body {
   font-family: 'Goblin One';
   font-size: 42px;
   color: #000;
-  line-height: 1.1;
 }
 
 .banner-info span {
@@ -115,7 +107,6 @@ body {
 
 .agendamento input:focus,
 .agendamento select:focus {
-  outline: none;
   border-color: #4caf50;
 }
 
@@ -124,7 +115,6 @@ body {
   border: none;
   border-radius: 6px;
   padding: 10px;
-  font-weight: bold;
   cursor: pointer;
 }
 
@@ -199,7 +189,6 @@ main h2 {
 .treatment-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .responsible h3 {
@@ -277,4 +266,198 @@ main h2 {
   flex-direction: column;
   gap: 10px;
   align-items: center;
+}
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+}
+.header-menu {
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+}
+@media screen and (max-width: 426px) {
+
+  body {
+    overflow-x: hidden;
+  }
+.header-menu {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+  }
+
+  #menu-toggle:checked + .hamburger + .header-menu {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  .hamburger span {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .top-header {
+    position: relative;
+    height: auto;
+    padding: 15px;
+  }
+
+  .logo-img {
+    width: 110px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .header-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #3f7f3b;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 0;
+    z-index: 999;
+  }
+
+  #menu-toggle:checked + .hamburger + .header-menu {
+    display: flex;
+  }
+
+  .header-menu a {
+    font-size: 15px;
+  }
+
+  .banner {
+    height: auto;
+    padding: 25px 15px;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+  }
+
+  .banner-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .banner-info img {
+    width: 65px;
+  }
+
+  .banner-info h2 {
+    font-size: 24px;
+  }
+
+  .banner-info span {
+    font-size: 17px;
+  }
+
+  .agendamento {
+    padding: 20px 15px;
+  }
+
+  .agendamento label {
+    font-size: 13px;
+  }
+
+  .agendamento .inputs {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .info {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .info div {
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .tech-section {
+    gap: 25px;
+  }
+
+  .img-placeholder img {
+    width: 100%;
+  }
+
+  .treatments {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .footer {
+    padding: 25px 15px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .footer-bottom p {
+    font-size: 14px;
+  }
+
+  .social-icons {
+    gap: 15px;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+
+  .top-header {
+    padding: 0 20px;
+  }
+
+  .logo-img {
+    width: 130px;
+  }
+
+  .banner {
+    padding-left: 30px;
+  }
+
+  .banner-info h2 {
+    font-size: 36px;
+  }
+
+  .banner-info span {
+    font-size: 24px;
+  }
+
+  .tech-section {
+    gap: 40px;
+  }
+
+  .img-placeholder img {
+    width: 320px;
+  }
+
+  .treatments {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer {
+    padding: 40px 30px;
+  }
 }
